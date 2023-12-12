@@ -1,0 +1,166 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@use "default-theme.scss" as default;
+@use 'angular-material-contrast-fix';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-storybook-sandbox-primary: mat.define-palette(default.$md-gray, 900);
+$angular-storybook-sandbox-accent: mat.define-palette(default.$md-blue, 500);
+
+// The warn palette is optional (defaults to red).
+$angular-storybook-sandbox-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-storybook-sandbox-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-storybook-sandbox-primary,
+    accent: $angular-storybook-sandbox-accent,
+    warn: $angular-storybook-sandbox-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-storybook-sandbox-theme);
+@include angular-material-contrast-fix.all-component-themes($angular-storybook-sandbox-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1 {
+  font-family: Roboto;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+h3 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+h4 {
+  font-family: Roboto;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+
+h5 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+h6 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  margin: 0;
+}
+
+.subtitle-1 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.15px;
+}
+
+.subtitle-2 {
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.1px;
+}
+
+p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+
+.small {
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.25px;
+}
+
+button {
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+}
+
+.overline {
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
