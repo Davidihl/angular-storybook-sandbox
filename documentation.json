@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-b5e97c46890aba692f0b5121d3004b69d5b39aa10855fc7de5322d321ce813f5e81b12abc33ade06f6142c9920b8a0b7ea08f07a1563ba4e4629d41934d0040e",
+            "id": "component-AppComponent-9cbcaeb146890e375ad87cefea73d69e76f2716bea510630af9c03d42bbd4401b8e3d77f5c53af6214e05862f9fcad7761368a9723ab64dcf4f87517b5cd0f4e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -35,7 +35,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 }
             ],
             "methodsClass": [],
@@ -55,18 +55,22 @@
                 {
                     "name": "MatSlideToggleModule",
                     "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { MatSlideToggleModule} from '@angular/material/slide-toggle';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet,MatSlideToggleModule],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'angular-storybook-sandbox';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { MatSlideToggleModule} from '@angular/material/slide-toggle';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet,MatSlideToggleModule,MatButtonModule],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'angular-storybook-sandbox';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>it works</p>"
+            "templateData": "<p>it works</p>\n<button mat-button label=\"test\">test</button>"
         }
     ],
     "modules": [],

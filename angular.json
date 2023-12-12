@@ -105,6 +105,9 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "angular-storybook-sandbox:build",
+            "styles": [
+              "src/styles.scss"
+            ],
             "compodoc": true,
             "compodocArgs": [
               "-e",
