@@ -56,6 +56,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass-loader": "^13.3.2",
     "storybook": "^7.6.4",
     "style-loader": "^3.3.3",
     "typescript": "~5.2.2"

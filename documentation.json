@@ -94,7 +94,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button ${argsToTemplate(args)}>{{label}}</button>`,\r\n    }),\r\n}"
+                "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button>{{label}}</button>`,\r\n    }),\r\n}"
             },
             {
                 "name": "bootstrap",
@@ -184,7 +184,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button ${argsToTemplate(args)}>{{label}}</button>`,\r\n    }),\r\n}"
+                    "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button>{{label}}</button>`,\r\n    }),\r\n}"
                 },
                 {
                     "name": "meta",

@@ -27,6 +27,6 @@ const meta: Meta = {
 export const Basic: Story = {
     render: (args) => ({
         props: args,
-        template: `<button mat-button ${argsToTemplate(args)}>{{label}}</button>`,
+        template: `<button mat-button>{{label}}</button>`,
     }),
 };
