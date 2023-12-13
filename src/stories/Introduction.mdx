@@ -25,3 +25,17 @@ E.g.:
 ```js filename="*.component.ts"
 import { MatButtonModule } from "@angular/material/button";
 ```
+
+Don't forget to add the import to your decorator.
+
+```js
+@Component({
+  selector: 'your-component',
+  standalone: true,
+  imports: [
+    MatButtonModule, // 👈
+  ],
+  templateUrl: './your-component.component.html',
+  styleUrl: './your-component.component.scss',
+})
+```
