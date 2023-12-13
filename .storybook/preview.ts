@@ -1,11 +1,23 @@
-import type { Preview } from "@storybook/angular";
-import { setCompodocJson } from "@storybook/addon-docs/angular";
-import docJson from "../documentation.json";
+import { setCompodocJson } from '@storybook/addon-docs/angular';
+import type { Preview } from '@storybook/angular';
+import docJson from '../documentation.json';
+
 setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    docs: {
+      // toc: {
+      //   contentsSelector: '.sbdocs-content',
+      //   headingSelector: 'h1,h2,h3',
+      //   ignoreSelector: '#primary',
+      //   disable: false,
+      //   unsafeTocbotOptions: {
+      //     orderedList: false,
+      //   },
+      // },
+    },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,

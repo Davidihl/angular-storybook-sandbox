@@ -1,0 +1,36 @@
+import { Meta, Primary, Controls, Story, Source } from "@storybook/blocks";
+import * as ButtonStories from "./Buttons.stories";
+
+<Meta of={ButtonStories} title="Button" />
+
+# Definition
+
+A Button is a clickable interactive element that triggers a response.
+
+## Usage
+
+The component comes in different variants such as `basic`, `flat`, `stroked` and `raised` in color themes for `primary`, `accent`, `warn` which you can use to alter the look and feel of the button.
+
+## Import
+
+<Source
+  code={`import {MatButtonModule} from '@angular/material/button';` format}
+  dark
+/>
+
+## Example
+
+<Story of={ButtonStories.Default} />
+<Source of={ButtonStories.Default} dark />
+
+## Inputs
+
+Button has the following properties:
+
+<Controls />
+
+### Primary
+
+A button can be of primary importance.
+
+<Story of={ButtonStories.Raised} />
