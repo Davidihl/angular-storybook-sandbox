@@ -1,5 +1,13 @@
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import type { Preview } from '@storybook/angular';
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/blocks';
 import docJson from '../documentation.json';
 
 setCompodocJson(docJson);
