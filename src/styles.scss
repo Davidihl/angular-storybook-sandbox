@@ -1,10 +1,9 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 @use "default-theme.scss" as default;
-@use 'angular-material-contrast-fix';
+@use "angular-material-contrast-fix";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -22,24 +21,34 @@ $angular-storybook-sandbox-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$angular-storybook-sandbox-theme: mat.define-light-theme((
-  color: (
-    primary: $angular-storybook-sandbox-primary,
-    accent: $angular-storybook-sandbox-accent,
-    warn: $angular-storybook-sandbox-warn,
+$angular-storybook-sandbox-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-storybook-sandbox-primary,
+      accent: $angular-storybook-sandbox-accent,
+      warn: $angular-storybook-sandbox-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($angular-storybook-sandbox-theme);
-@include angular-material-contrast-fix.all-component-themes($angular-storybook-sandbox-theme);
+@include angular-material-contrast-fix.all-component-themes(
+  $angular-storybook-sandbox-theme
+);
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 h1 {
   font-family: Roboto;
@@ -142,7 +151,7 @@ button {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 1.25px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 .caption {
@@ -163,4 +172,3 @@ button {
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-

@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-9cbcaeb146890e375ad87cefea73d69e76f2716bea510630af9c03d42bbd4401b8e3d77f5c53af6214e05862f9fcad7761368a9723ab64dcf4f87517b5cd0f4e",
+            "id": "component-AppComponent-d0b6150b1da543766d9f698a1b2d1c8d74907d4043b9eb09861c4848fee1844d0053bf49ec5686bab5678d2d4c57b4decaf19d4a800f0c1130265c7209e478a1",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -64,13 +64,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { MatSlideToggleModule} from '@angular/material/slide-toggle';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet,MatSlideToggleModule,MatButtonModule],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'angular-storybook-sandbox';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [CommonModule, RouterOutlet,MatSlideToggleModule,MatButtonModule],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-storybook-sandbox';\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>it works</p>\n<button mat-button label=\"test\">test</button>"
+            "templateData": "<p>it works</p>\r\n<button mat-button label=\"test\">test</button>"
         }
     ],
     "modules": [],
@@ -84,17 +84,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [provideRouter(routes), provideClientHydration(), provideAnimations()]\n}"
+                "defaultValue": "{\r\n  providers: [provideRouter(routes), provideClientHydration(), provideAnimations()]\r\n}"
             },
             {
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                "file": "src/stories/Buttons/Buttons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button>{{label}}</button>`,\r\n    }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <button\r\n        ${args['variant'] === 'Raised' ? 'mat-raised-button' : ''}\r\n        ${args['variant'] === 'Flat' ? 'mat-flat-button' : ''}\r\n        ${args['variant'] === 'Stroked' ? 'mat-stroked-button' : ''}\r\n        ${args['variant'] === 'Basic' ? 'mat-button' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        {{label}}\r\n    </button>`,\r\n  }),\r\n}"
             },
             {
                 "name": "bootstrap",
@@ -120,11 +120,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                "file": "src/stories/Buttons/Buttons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\r\n    component: MatButton,\r\n    title:'Components/Buttons/Basic Button',\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CommonModule,\r\n                MatButtonModule\r\n              ]\r\n        })\r\n    ],\r\n    args:{\r\n        label:'Button'\r\n    }\r\n  }"
+                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'accent',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -134,7 +134,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "Raised",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Buttons/Buttons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <button\r\n          mat-raised-button\r\n          ${args['color'] ? 'color={{color}}' : ''}\r\n          ${args['disabled'] ? 'disabled' : ''}\r\n      >\r\n          {{label}}\r\n      </button>`,\r\n  }),\r\n}"
             },
             {
                 "name": "serverConfig",
@@ -144,7 +154,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
             }
         ],
         "functions": [],
@@ -154,7 +164,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj",
-                "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                "file": "src/stories/Buttons/Buttons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -172,29 +182,39 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [provideRouter(routes), provideClientHydration(), provideAnimations()]\n}"
+                    "defaultValue": "{\r\n  providers: [provideRouter(routes), provideClientHydration(), provideAnimations()]\r\n}"
                 }
             ],
-            "src/stories/Buttons/Basic-Buttons.stories.ts": [
+            "src/stories/Buttons/Buttons.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                    "file": "src/stories/Buttons/Buttons.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    render: (args) => ({\r\n        props: args,\r\n        template: `<button mat-button>{{label}}</button>`,\r\n    }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <button\r\n        ${args['variant'] === 'Raised' ? 'mat-raised-button' : ''}\r\n        ${args['variant'] === 'Flat' ? 'mat-flat-button' : ''}\r\n        ${args['variant'] === 'Stroked' ? 'mat-stroked-button' : ''}\r\n        ${args['variant'] === 'Basic' ? 'mat-button' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        {{label}}\r\n    </button>`,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                    "file": "src/stories/Buttons/Buttons.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\r\n    component: MatButton,\r\n    title:'Components/Buttons/Basic Button',\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CommonModule,\r\n                MatButtonModule\r\n              ]\r\n        })\r\n    ],\r\n    args:{\r\n        label:'Button'\r\n    }\r\n  }"
+                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'accent',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "Raised",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Buttons/Buttons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <button\r\n          mat-raised-button\r\n          ${args['color'] ? 'color={{color}}' : ''}\r\n          ${args['disabled'] ? 'disabled' : ''}\r\n      >\r\n          {{label}}\r\n      </button>`,\r\n  }),\r\n}"
                 }
             ],
             "src/main.server.ts": [
@@ -228,7 +248,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -240,20 +260,20 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "src/stories/Buttons/Basic-Buttons.stories.ts": [
+            "src/stories/Buttons/Buttons.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj",
-                    "file": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                    "file": "src/stories/Buttons/Buttons.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -327,7 +347,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                "filePath": "src/stories/Buttons/Buttons.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -337,11 +357,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Buttons/Basic-Buttons.stories.ts",
+                "filePath": "src/stories/Buttons/Buttons.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Buttons/Buttons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Raised",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
