@@ -138,7 +138,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n\r\n    <button\r\n        ${args['variant'] === 'Icon' ? 'mat-icon-button' : ''}\r\n        ${args['variant'] === 'FAB' ? 'mat-fab' : ''}\r\n        ${args['variant'] === 'Mini FAB' ? 'mat-mini-fab' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n        ${args['variant'] === 'FAB' ? 'mat-fab' : ''}\r\n        ${args['variant'] === 'Mini FAB' ? 'mat-mini-fab' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+            },
+            {
+                "name": "FAB",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-fab\r\n\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
             },
             {
                 "name": "Flat",
@@ -151,6 +161,16 @@
                 "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n\r\n      <button\r\n          mat-flat-button\r\n          ${args['color'] ? 'color={{color}}' : ''}\r\n          ${args['disabled'] ? 'disabled' : ''}\r\n      >\r\n          {{label}}\r\n      </button>`,\r\n  }),\r\n}"
             },
             {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Buttons/Icon-Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-icon-button\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -158,7 +178,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -168,7 +188,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/FAB Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: '',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Icon', 'FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/FAB Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons (e.g home)',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Buttons/Icon-Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Icon Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: '',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons (e.g home)',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "MiniFAB",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-mini-fab\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
             },
             {
                 "name": "preview",
@@ -178,7 +218,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    docs: {\r\n      // toc: {\r\n      //   contentsSelector: '.sbdocs-content',\r\n      //   headingSelector: 'h1,h2,h3',\r\n      //   ignoreSelector: '#primary',\r\n      //   disable: false,\r\n      //   unsafeTocbotOptions: {\r\n      //     orderedList: false,\r\n      //   },\r\n      // },\r\n    },\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    docs: {\r\n      theme: themes.light,\r\n      // toc: {\r\n      //   contentsSelector: '.sbdocs-content',\r\n      //   headingSelector: 'h1,h2,h3',\r\n      //   ignoreSelector: '#primary',\r\n      //   disable: false,\r\n      //   unsafeTocbotOptions: {\r\n      //     orderedList: false,\r\n      //   },\r\n      // },\r\n    },\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Raised",
@@ -230,6 +270,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj",
                 "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj",
+                "file": "src/stories/Buttons/Icon-Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -289,7 +340,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'Raised',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['Basic', 'Flat', 'Raised', 'Stroked'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Raised",
@@ -355,7 +406,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n\r\n    <button\r\n        ${args['variant'] === 'Icon' ? 'mat-icon-button' : ''}\r\n        ${args['variant'] === 'FAB' ? 'mat-fab' : ''}\r\n        ${args['variant'] === 'Mini FAB' ? 'mat-mini-fab' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n        ${args['variant'] === 'FAB' ? 'mat-fab' : ''}\r\n        ${args['variant'] === 'Mini FAB' ? 'mat-mini-fab' : ''}\r\n        ${args['color'] ? 'color={{color}}' : ''}\r\n        ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "FAB",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-fab\r\n\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -365,7 +426,39 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/FAB Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: '',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      description: 'Choose color based on the theme',\r\n      options: ['Icon', 'FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/FAB Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: 'primary',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons (e.g home)',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "MiniFAB",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-mini-fab\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+                }
+            ],
+            "src/stories/Buttons/Icon-Button.stories.ts": [
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Buttons/Icon-Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    <!-- import {MatButtonModule} from '@angular/material/button'; -->\r\n    <!-- import {MatIconModule} from '@angular/material/icon'; -->\r\n\r\n    <button\r\n      mat-icon-button\r\n      ${args['color'] ? 'color={{color}}' : ''}\r\n      ${args['disabled'] ? 'disabled' : ''}\r\n    >\r\n        <mat-icon>{{icon}}</mat-icon>\r\n    </button>`,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Buttons/Icon-Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Icon Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule, MatIconModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    icon: 'home',\r\n    color: '',\r\n    disabled: false,\r\n    variant: 'FAB',\r\n  },\r\n  argTypes: {\r\n    icon: {\r\n      description: 'https://fonts.google.com/icons (e.g home)',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n    variant: {\r\n      table: {\r\n        disable: true,\r\n      },\r\n      description: 'Choose color based on the theme',\r\n      options: ['FAB', 'Mini FAB'],\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -377,7 +470,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    docs: {\r\n      // toc: {\r\n      //   contentsSelector: '.sbdocs-content',\r\n      //   headingSelector: 'h1,h2,h3',\r\n      //   ignoreSelector: '#primary',\r\n      //   disable: false,\r\n      //   unsafeTocbotOptions: {\r\n      //     orderedList: false,\r\n      //   },\r\n      // },\r\n    },\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    docs: {\r\n      theme: themes.light,\r\n      // toc: {\r\n      //   contentsSelector: '.sbdocs-content',\r\n      //   headingSelector: 'h1,h2,h3',\r\n      //   ignoreSelector: '#primary',\r\n      //   disable: false,\r\n      //   unsafeTocbotOptions: {\r\n      //     orderedList: false,\r\n      //   },\r\n      // },\r\n    },\r\n    actions: { argTypesRegex: '^on[A-Z].*' },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -404,6 +497,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj",
                     "file": "src/stories/Buttons/FAB-Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/stories/Buttons/Icon-Button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj",
+                    "file": "src/stories/Buttons/Icon-Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -548,6 +654,46 @@
             },
             {
                 "filePath": "src/stories/Buttons/FAB-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FAB",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Buttons/FAB-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Buttons/FAB-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MiniFAB",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Buttons/Icon-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Buttons/Icon-Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

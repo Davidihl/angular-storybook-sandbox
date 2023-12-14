@@ -1,5 +1,6 @@
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import type { Preview } from '@storybook/angular';
+import { themes } from '@storybook/theming';
 import docJson from '../documentation.json';
 
 setCompodocJson(docJson);
@@ -7,6 +8,7 @@ setCompodocJson(docJson);
 const preview: Preview = {
   parameters: {
     docs: {
+      theme: themes.light,
       // toc: {
       //   contentsSelector: '.sbdocs-content',
       //   headingSelector: 'h1,h2,h3',
