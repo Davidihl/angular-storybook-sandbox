@@ -40,11 +40,6 @@ export default meta;
 type Story = StoryObj;
 
 export const Raised: Story = {
-  args: {
-    label: 'Button',
-    color: 'primary',
-    disabled: false,
-  },
   render: (args) => ({
     props: args,
     template: `

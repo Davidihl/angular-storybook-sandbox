@@ -158,7 +158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -310,7 +310,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  component: MatButton,\r\n  title: 'Components/Buttons/Button',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [MatButtonModule],\r\n    }),\r\n  ],\r\n  args: {\r\n    label: 'Button',\r\n    color: 'primary',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Change the name of the button',\r\n    },\r\n    color: {\r\n      description: 'Choose color based on the theme',\r\n      options: [null, 'primary', 'accent', 'warn'],\r\n      control: { type: 'select' },\r\n    },\r\n    disabled: {\r\n      description: 'Deactivate the button',\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Raised",
