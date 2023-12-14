@@ -20,7 +20,6 @@ const meta: Meta = {
     label: 'Button',
     color: 'primary',
     disabled: false,
-    variant: 'Raised',
   },
   argTypes: {
     label: {
@@ -34,41 +33,18 @@ const meta: Meta = {
     disabled: {
       description: 'Deactivate the button',
     },
-    variant: {
-      table: {
-        disable: true,
-      },
-      description: 'Choose color based on the theme',
-      options: ['Basic', 'Flat', 'Raised', 'Stroked'],
-      control: { type: 'select' },
-    },
   },
 };
 
 export default meta;
 type Story = StoryObj;
 
-const Config: Story = {
-  render: (args) => ({
-    props: args,
-    template: `
-    <!-- import {MatButtonModule} from '@angular/material/button'; -->
-
-    <button
-        ${args['variant'] === 'Raised' ? 'mat-raised-button' : ''}
-        ${args['variant'] === 'Flat' ? 'mat-flat-button' : ''}
-        ${args['variant'] === 'Stroked' ? 'mat-stroked-button' : ''}
-        ${args['variant'] === 'Basic' ? 'mat-button' : ''}
-        ${args['color'] ? 'color={{color}}' : ''}
-        ${args['disabled'] ? 'disabled' : ''}
-
-    >
-        {{label}}
-    </button>`,
-  }),
-};
-
 export const Raised: Story = {
+  args: {
+    label: 'Button',
+    color: 'primary',
+    disabled: false,
+  },
   render: (args) => ({
     props: args,
     template: `

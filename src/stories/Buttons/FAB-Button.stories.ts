@@ -21,7 +21,6 @@ const meta: Meta = {
     icon: 'home',
     color: 'primary',
     disabled: false,
-    variant: 'FAB',
   },
   argTypes: {
     icon: {
@@ -35,37 +34,11 @@ const meta: Meta = {
     disabled: {
       description: 'Deactivate the button',
     },
-    variant: {
-      table: {
-        disable: true,
-      },
-      description: 'Choose color based on the theme',
-      options: ['FAB', 'Mini FAB'],
-      control: { type: 'select' },
-    },
   },
 };
 
 export default meta;
 type Story = StoryObj;
-
-const Config: Story = {
-  render: (args) => ({
-    template: `
-    <!-- import {MatButtonModule} from '@angular/material/button'; -->
-    <!-- import {MatIconModule} from '@angular/material/icon'; -->
-
-    <button
-        ${args['variant'] === 'FAB' ? 'mat-fab' : ''}
-        ${args['variant'] === 'Mini FAB' ? 'mat-mini-fab' : ''}
-        ${args['color'] ? 'color={{color}}' : ''}
-        ${args['disabled'] ? 'disabled' : ''}
-
-    >
-        <mat-icon>{{icon}}</mat-icon>
-    </button>`,
-  }),
-};
 
 export const FAB: Story = {
   render: (args) => ({

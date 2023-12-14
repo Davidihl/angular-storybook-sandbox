@@ -7,7 +7,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-styling-webpack',
-    '@storybook/addon-storysource',
     {
       name: '@storybook/addon-styling-webpack',
 
@@ -56,8 +55,9 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: true,
     defaultName: 'Documentation',
   },
+  staticDirs: ['../public'],
 };
 export default config;
